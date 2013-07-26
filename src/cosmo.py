@@ -129,20 +129,27 @@ def calculate(*args):
         wmu = (Mnumu / Decimal(93.90)) * Decimal(math.pow(T0 / Decimal(2.72528), Decimal(3)))
         wtau = (Mnutau / Decimal(93.90)) * Decimal(math.pow(T0 / Decimal(2.72528), Decimal(3)))
 
+        # calculation for az
         az = 1 / (1 + 1 * Z)
+        # calculation of Omega(radiation)
         W1 = Decimal(1 / (2.477e10))
         W2 = Decimal(math.pow(T0 / Decimal(2.72528), Decimal(4)))
         W3 = Decimal(h * h)
         WR = W1 * (W2 / W3)
+        # calculation of zage
         T1 = calc_zage(Z, T0, we, wmu, wtau, nurho, Mnue, Mnumu, Mnutau, n, h, WV, WM, WR, Wnu, W, Wp, mnurel)
         T2 = Decimal(math.pow(10.0, dzage))
         zage = T1 * T2
+        # calculation of values of DTT and DCMR
         values = calc_mid(az, n, WV, WM, WR, Wnu, w, wp, nurho, Mnue, Mnumu, Mnutau, mnurel, we, wmu, wtau, h)
         DTT = (1 - az) * values["DTT"] / n
         DCMR = (1 - az) * values["DCMR"] / n
-        age = DTT + zage  # constant (age of universe in units of 1/H0)
+        # constant (age of universe in units of 1/H0)
+        age = DTT + zage
         age_Gyr = age * (Tyr / value)
+        # Calculation for light travel time
         DTT_Gyr = (Tyr / H0) * DTT
+        # comoving radial distance
         DCMR_Gyr = (Tyr / H0) * DCMR
         DCMR_Mpc = (c / H0) * DCMR
         Gyr.set(age_Gyr)
