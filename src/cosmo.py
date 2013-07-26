@@ -72,15 +72,6 @@ def calc_mid(az, n, WV, WM, WR, Wnu, w, wp, nurho, Mnue, Mnumu, Mnutau, mnurel, 
 
 def calculate(*args):
     try:
-        global H0
-        global wm
-        global z
-        global mnue
-        global mnumu
-        global mnutau
-        global t0
-        global w
-        global wp
         # constants
         i = 0  # index
         n = 1000  # number of points in integrals
