@@ -60,8 +60,8 @@ class Calculator_GUI(JFrame, ActionListener):
         self.setVisible(True)
 
     def actionPerformed(self, event):
-        a = int(self.a_field.getText())
-        b = int(self.b_field.getText())
+        a = float(self.a_field.getText())
+        b = float(self.b_field.getText())
         self.c_field.setText(str(dirks_example_calc(a, b)))
 
 
