@@ -159,6 +159,28 @@ def calculate(*args):
 def dirks_example_calc(a, b):
     return ((a ** 2) + (b ** 2)) ** 0.5
 
+def calculatronamaton(h, o_m, z, mnu_e, mnu_mu, mnu_tau, w, dw, t, o_de, universe):
+    calcs = {}
+    calcs["flat"] = flat_calc
+    calcs["open"] = open_calc
+    calcs["general"] = gen_calc
+
+    return calcs[universe]()
+
+def flat_calc():
+    #do shit
+    return {"Bang":0, "RedShift":0, "LightTravel":0, "RadialDist":0, "Volume":0}
+
+def open_calc():
+    #do more shit
+    return {"Bang":0, "RedShift":0, "LightTravel":0, "RadialDist":0, "Volume":0}
+
+def gen_calc():
+    #do generic shit
+    return {"Bang":0, "RedShift":0, "LightTravel":0, "RadialDist":0, "Volume":0}
+
+
+
 '''root = Tk()
 root.title("H0 to Gyr")
 
