@@ -1,5 +1,5 @@
-from tkinter import *
-from tkinter import ttk
+#from tkinter import *
+#from tkinter import ttk
 import math
 from decimal import *
 
@@ -156,7 +156,10 @@ def calculate(*args):
     except ValueError:
         pass
 
-root = Tk()
+def dirks_example_calc(a, b):
+    return ((a ** 2) + (b ** 2)) ** 0.5
+
+'''root = Tk()
 root.title("H0 to Gyr")
 
 mainframe = ttk.Frame(root, padding = "4 4 12 12")
@@ -223,4 +226,4 @@ for child in mainframe.winfo_children(): child.grid_configure(padx = 5, pady = 5
 H0_entry.focus()
 root.bind('<Return>', calculate)
 
-root.mainloop()
+root.mainloop()'''
